@@ -1,4 +1,4 @@
-#Handlers restart nginx
+# Handlers restart nginx
 
 - name:
   service:

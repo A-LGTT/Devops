@@ -1,4 +1,4 @@
-#Installation d'un reverse proxy nginx
+# Installation d'un reverse proxy nginx
 
 - name : Install nginx
   apt:
