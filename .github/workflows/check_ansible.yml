@@ -1,9 +1,5 @@
 name: Ansible Lint Check
-
-on:
-  push:
-    paths:
-      - '*.yml'
+on: [push, pull_request]
 
 jobs:
   ansible-lint:
