@@ -1,17 +1,22 @@
 name: Ansible Check
-
-on:
-  push:
-    paths:
-      - '*.yml'
+on: [push, pull_request]
 
 jobs:
   ansible-lint:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: Lint Ansible Playbook
-      uses: ansible/ansible-lint-action@v1
-      with:
-        ansible-lint-path: install.yml
+     - uses: actions/checkout@v1
+     - name: Set up Python ${{ matrix.python-version }}
+       uses: actions/setup-python@v1
+       with:
+         python-version: ${{ matrix.python-version }}
+     - name: Install dependencies
+       run: |
+         python -m pip install --upgrade pip
+         pip install ansible ansible-lint
+     - name: Lint playbook
+       run: |
+         ansible-playbook install.yml --syntax-check
+         ansible-lint install.yml
+
