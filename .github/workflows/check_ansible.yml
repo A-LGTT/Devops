@@ -1,4 +1,4 @@
-name: Ansible Lint Check
+name: Ansible Check
 
 on:
   push:
