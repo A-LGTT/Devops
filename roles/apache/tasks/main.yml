@@ -1,0 +1,9 @@
+#Installation d'un serveur apache
+
+- name : Install apache
+  apt:
+    name: apache2
+    state: present
+  notify:
+    - restart apache
+    

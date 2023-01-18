@@ -1,0 +1,11 @@
+#Pour l'hote nginx lancer le role nginx
+- hosts: nginx
+  gather_facts: yes
+  roles:
+    - nginx
+  
+#Pour l'hote apache lancer le role apache
+- hosts: apache
+  gather_facts: yes
+  roles:
+    - apache

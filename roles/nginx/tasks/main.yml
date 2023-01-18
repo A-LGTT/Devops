@@ -1,0 +1,14 @@
+#Installation d'un reverse proxy nginx
+
+- name : Install nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Create nginx configuration
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/sites-available/default
+  notify:
+    - restart nginx
+
