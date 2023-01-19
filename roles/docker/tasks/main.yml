@@ -1,6 +1,6 @@
 - name: Install Docker
   apt:
-    name: docker.io
+    name: docker
     state: present
 
 - name: Start PostgreSQL container
