@@ -9,3 +9,4 @@
   gather_facts: yes
   roles:
     - apache
+    - docker
