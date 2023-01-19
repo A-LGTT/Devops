@@ -3,5 +3,5 @@
     name: docker
     state: present
 
-- name: Start PostgreSQL container
-  command: docker run --name postgres -e POSTGRES_PASSWORD=password -d postgres -p 5432:5432
+#- name: Start PostgreSQL container
+#  command: docker run --name postgres -e POSTGRES_PASSWORD=password -d postgres -p 5432:5432
